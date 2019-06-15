@@ -6,6 +6,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class ManipulacaoTxt {
 
@@ -14,7 +15,7 @@ public class ManipulacaoTxt {
 	}
 
 	public void ler(List<Integer> listEntradas) {
-		String caminhoArq = "/home/gabriel/workspace/estruturaDadosII_2019.1/dcc012/arqs/entradas.txt";
+		String caminhoArq = "/home/gabriel/";
 		try {
 			FileReader arq = new FileReader(caminhoArq);
 			BufferedReader lerArq = new BufferedReader(arq);
@@ -29,12 +30,27 @@ public class ManipulacaoTxt {
 		}
 	}
 
-	public void gravar(int i, Long tempo) {
+	public void gravar(int i, double tempo) {
 		String caminhoArq = "/home/gabriel/saida.txt";
 		try {
-			BufferedWriter buffWrite = new BufferedWriter(new FileWriter(caminhoArq));
-			buffWrite.append("Entrada: " + i + "Tempo: " + tempo + "milessegundos" + "\n");
-			buffWrite.close();
+			PrintWriter printWriter = new PrintWriter(new FileWriter(caminhoArq, true));
+			printWriter.println("Entrada: " + i + " - Tempo: " + tempo + "milessegundos");
+			printWriter.println("-------------------------------------------------------------");
+			printWriter.flush();
+			printWriter.close();
+		} catch (IOException e) {
+			System.err.printf("Erro na gravação do arquivo: %s.\n", e.getMessage());
+		}
+	}
+	
+	public void gravarTexto(String mensagem) {
+		String caminhoArq = "/home/gabriel/saida.txt";
+		try {
+			PrintWriter printWriter = new PrintWriter(new FileWriter(caminhoArq, true));
+			printWriter.println(mensagem);
+			printWriter.println("-------------------------------------------------------------");
+			printWriter.flush();
+			printWriter.close();
 		} catch (IOException e) {
 			System.err.printf("Erro na gravação do arquivo: %s.\n", e.getMessage());
 		}
