@@ -4,13 +4,27 @@ public class NoAvl {
 	private NoAvl esquerda;
 	private NoAvl direita;
 	private NoAvl pai;
-	private int chave;
+	private int userID;
+	private int movieID;
 	private int balanceamento;
+	
+	public int getMovieID() {
+		return movieID;
+	}
+	
+	public int getUserID() {
+		return userID;
+	}
+	
+	public void setMovieID(int movieID) {
+		this.movieID = movieID;
+	}
 
-	public NoAvl(int k) {
+	public NoAvl(int userID, int movieID) {
 		setEsquerda(setDireita(setPai(null)));
 		setBalanceamento(0);
-		setChave(k);
+		setMovieID(movieID);
+		setUserID(userID);
 	}
 
 	public String toString() {
@@ -18,11 +32,11 @@ public class NoAvl {
 	}
 
 	public int getChave() {
-		return chave;
+		return userID;
 	}
 
-	public void setChave(int chave) {
-		this.chave = chave;
+	public void setUserID(int chave) {
+		this.userID = chave;
 	}
 
 	public int getBalanceamento() {

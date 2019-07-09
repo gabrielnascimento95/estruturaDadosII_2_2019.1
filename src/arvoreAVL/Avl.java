@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 public class Avl {
 	protected NoAvl raiz;
-
-	public void inserir(int k) {
-		NoAvl n = new NoAvl(k);
+	
+	public Avl() {
+		// TODO Auto-generated constructor stub
+	}
+	public void inserir(int k, int y) {
+		NoAvl n = new NoAvl(k,y); //primeiro UserID e segundo MovieId
 		inserirAVL(this.raiz, n);
 	}
 
@@ -111,7 +114,8 @@ public class Avl {
 
 		} else {
 			r = sucessor(aRemover);
-			aRemover.setChave(r.getChave());
+			aRemover.setUserID(r.getUserID());
+			aRemover.setMovieID(r.getMovieID());
 		}
 
 		NoAvl p;
@@ -248,7 +252,7 @@ public class Avl {
 		no.setBalanceamento(altura(no.getDireita()) - altura(no.getEsquerda()));
 	}
 
-	final protected ArrayList<NoAvl> inorder() {
+	private ArrayList<NoAvl> inorder() {
 		ArrayList<NoAvl> ret = new ArrayList<NoAvl>();
 		inorder(raiz, ret);
 		return ret;
