@@ -252,10 +252,13 @@ public class Avl {
 		no.setBalanceamento(altura(no.getDireita()) - altura(no.getEsquerda()));
 	}
 
-	private ArrayList<NoAvl> inorder() {
+	public boolean busca() {
 		ArrayList<NoAvl> ret = new ArrayList<NoAvl>();
 		inorder(raiz, ret);
-		return ret;
+		if(ret != null) {
+			return true;
+		}
+		return false;
 	}
 
 	final protected void inorder(NoAvl no, ArrayList<NoAvl> lista) {

@@ -52,9 +52,17 @@ public class Main {
 					arvoreAVL.inserir(listUserIdAux.get(i), listMovieIdAux.get(i));
 				}
 				long tempoFinalInsertion = System.currentTimeMillis()-tempoInicioInsertion;
-				arquivoTxt.gravarTexto("Arvore AVL");
+				arquivoTxt.gravarTextoInsercao("Arvore AVL");
 				arquivoTxt.gravarMetricasInsercao(listEntradas.get(0), tempoFinalInsertion);
-				System.out.println("Tempo de processamento: " + tempoFinalInsertion + " milissegundos.");
+				System.out.println("Tempo de processamento para inserção: " + tempoFinalInsertion + " milissegundos.");
+				long tempoInicioBusca = System.currentTimeMillis();
+				long tempoFinalBusca = 0;
+				arquivoTxt.gravarTextoBusca("Arvore AVL - Busca");
+				if(arvoreAVL.busca()) {
+					tempoFinalBusca = System.currentTimeMillis()-tempoInicioBusca;
+				};
+				System.out.println("Tempo de processamento para busca: " + tempoFinalBusca + " milissegundos.");	
+				arquivoTxt.gravarMetricasBusca(listEntradas.get(0), tempoFinalBusca);
 				break;
 			case 1:
 				long tempoInicioMerge = System.currentTimeMillis();
@@ -93,9 +101,17 @@ public class Main {
 					arvoreAVL.inserir(listUserIdAux.get(i), listMovieIdAux.get(i));
 				}
 				long tempoFinalInsertion = System.currentTimeMillis()-tempoInicioInsertion;
-				arquivoTxt.gravarTexto("Arvore AVL");
+				arquivoTxt.gravarTextoInsercao("Arvore AVL");
 				arquivoTxt.gravarMetricasInsercao(listEntradas.get(0), tempoFinalInsertion);
 				System.out.println("Tempo de processamento: " + tempoFinalInsertion + " milissegundos.");
+				long tempoInicioBusca = System.currentTimeMillis();
+				long tempoFinalBusca = 0;
+				arquivoTxt.gravarTextoBusca("Arvore AVL - Busca");
+				if(arvoreAVL.busca()) {
+					tempoFinalBusca = System.currentTimeMillis()-tempoInicioBusca;
+				};
+				System.out.println("Tempo de processamento para busca: " + tempoFinalBusca + " milissegundos.");	
+				arquivoTxt.gravarMetricasBusca(listEntradas.get(0), tempoFinalBusca);	
 				break;
 			case 1:
 				long tempoInicioMerge = System.currentTimeMillis();
@@ -134,9 +150,17 @@ public class Main {
 					arvoreAVL.inserir(listUserIdAux.get(i), listMovieIdAux.get(i));
 				}
 				long tempoFinalInsertion = System.currentTimeMillis()-tempoInicioInsertion;
-				arquivoTxt.gravarTexto("Arvore AVL");
-				arquivoTxt.gravarMetricasInsercao(listEntradas.get(0), tempoFinalInsertion);
+				arquivoTxt.gravarTextoInsercao("Arvore AVL");
+				arquivoTxt.gravarMetricasInsercao(listEntradas.get(2), tempoFinalInsertion);
 				System.out.println("Tempo de processamento: " + tempoFinalInsertion + " milissegundos.");
+				long tempoInicioBusca = System.currentTimeMillis();
+				long tempoFinalBusca = 0;
+				arquivoTxt.gravarTextoBusca("Arvore AVL - Busca");
+				if(arvoreAVL.busca()) {
+					tempoFinalBusca = System.currentTimeMillis()-tempoInicioBusca;
+				};
+				arquivoTxt.gravarMetricasBusca(listEntradas.get(2), tempoFinalBusca);
+				System.out.println("Tempo de processamento para busca: " + tempoFinalBusca + " milissegundos.");	
 				break;
 			case 1:
 				long tempoInicioMerge = System.currentTimeMillis();
@@ -175,9 +199,17 @@ public class Main {
 					arvoreAVL.inserir(listUserIdAux.get(i), listMovieIdAux.get(i));
 				}
 				long tempoFinalInsertion = System.currentTimeMillis()-tempoInicioInsertion;
-				arquivoTxt.gravarTexto("Arvore AVL");
-				arquivoTxt.gravarMetricasInsercao(listEntradas.get(0), tempoFinalInsertion);
+				arquivoTxt.gravarTextoInsercao("Arvore AVL");
+				arquivoTxt.gravarMetricasInsercao(listEntradas.get(3), tempoFinalInsertion);
 				System.out.println("Tempo de processamento: " + tempoFinalInsertion + " milissegundos.");
+				long tempoInicioBusca = System.currentTimeMillis();
+				long tempoFinalBusca = 0;
+				arquivoTxt.gravarTextoBusca("Arvore AVL - Busca");
+				if(arvoreAVL.busca()) {
+					tempoFinalBusca = System.currentTimeMillis()-tempoInicioBusca;
+				};
+				arquivoTxt.gravarMetricasBusca(listEntradas.get(3), tempoFinalBusca);
+				System.out.println("Tempo de processamento para busca: " + tempoFinalBusca + " milissegundos.");	
 				break;
 			case 1:
 				long tempoInicioMerge = System.currentTimeMillis();
@@ -216,9 +248,17 @@ public class Main {
 					arvoreAVL.inserir(listUserIdAux.get(i), listMovieIdAux.get(i));
 				}
 				long tempoFinalInsertion = System.currentTimeMillis()-tempoInicioInsertion;
-				arquivoTxt.gravarTexto("Arvore AVL");
+				arquivoTxt.gravarTextoInsercao("Arvore AVL - Inserção");
 				arquivoTxt.gravarMetricasInsercao(listEntradas.get(0), tempoFinalInsertion);
 				System.out.println("Tempo de processamento: " + tempoFinalInsertion + " milissegundos.");
+				long tempoInicioBusca = System.currentTimeMillis();
+				long tempoFinalBusca = 0;
+				arquivoTxt.gravarTextoBusca("Arvore AVL - Busca");
+				if(arvoreAVL.busca()) {
+					tempoFinalBusca = System.currentTimeMillis()-tempoInicioBusca;
+				};
+				arquivoTxt.gravarMetricasBusca(listEntradas.get(0), tempoFinalBusca);
+				System.out.println("Tempo de processamento para busca: " + tempoFinalBusca + " milissegundos.");	
 				break;
 			case 1:
 				long tempoInicioMerge = System.currentTimeMillis();
@@ -256,9 +296,17 @@ public class Main {
 					arvoreAVL.inserir(listUserIdAux.get(i), listMovieIdAux.get(i));
 				}
 				long tempoFinalInsertion = System.currentTimeMillis()-tempoInicioInsertion;
-				arquivoTxt.gravarTexto("Arvore AVL");
-				arquivoTxt.gravarMetricasInsercao(listEntradas.get(0), tempoFinalInsertion);
+				arquivoTxt.gravarTextoInsercao("Arvore AVL");
+				arquivoTxt.gravarMetricasInsercao(listEntradas.get(5), tempoFinalInsertion);
 				System.out.println("Tempo de processamento: " + tempoFinalInsertion + " milissegundos.");
+				long tempoInicioBusca = System.currentTimeMillis();
+				long tempoFinalBusca = 0;
+				arquivoTxt.gravarTextoBusca("Arvore AVL - Busca");
+				if(arvoreAVL.busca()) {
+					tempoFinalBusca = System.currentTimeMillis()-tempoInicioBusca;
+				};
+				arquivoTxt.gravarMetricasBusca(listEntradas.get(5), tempoFinalBusca);
+				System.out.println("Tempo de processamento para busca: " + tempoFinalBusca + " milissegundos.");	
 				break;
 			case 1:
 				long tempoInicioMerge = System.currentTimeMillis();

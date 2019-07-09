@@ -56,8 +56,33 @@ public class ManipulacaoTxt {
 		}
 	}
 	
-	public void gravarTexto(String mensagem) {
+	public void gravarMetricasBusca(int i, double tempo) {
+		String caminhoArq = "/home/gabriel/eclipse-workspace/trabalho2_ed2/arquivos/saidaBusca.txt";
+		try {
+			PrintWriter printWriter = new PrintWriter(new FileWriter(caminhoArq, true));
+			printWriter.println("Entrada: " + i + " - Tempo: " + tempo + "milessegundos");
+			printWriter.println("-------------------------------------------------------------");
+			printWriter.flush();
+			printWriter.close();
+		} catch (IOException e) {
+			System.err.printf("Erro na gravação do arquivo: %s.\n", e.getMessage());
+		}
+	}
+	
+	public void gravarTextoInsercao(String mensagem) {
 		String caminhoArq = "/home/gabriel/eclipse-workspace/trabalho2_ed2/arquivos/saidaInsercao.txt";
+		try {
+			PrintWriter printWriter = new PrintWriter(new FileWriter(caminhoArq, true));
+			printWriter.println(mensagem);
+			printWriter.flush();
+			printWriter.close();
+		} catch (IOException e) {
+			System.err.printf("Erro na gravação do arquivo: %s.\n", e.getMessage());
+		}
+	}
+	
+	public void gravarTextoBusca(String mensagem) {
+		String caminhoArq = "/home/gabriel/eclipse-workspace/trabalho2_ed2/arquivos/saidaBusca.txt";
 		try {
 			PrintWriter printWriter = new PrintWriter(new FileWriter(caminhoArq, true));
 			printWriter.println(mensagem);
